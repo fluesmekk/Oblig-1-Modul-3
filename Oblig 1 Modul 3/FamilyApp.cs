@@ -42,11 +42,16 @@ namespace Oblig_1_Modul_3
 
         private string GetPersonAndChildren(int index)
         {
+<<<<<<< HEAD
             var PandC = "";
+=======
+            var PersonAndChildren = "";
+>>>>>>> 7a484b8a20c97eb7f560896ed9f72e08014909ba
             foreach (var p in _people)
             {
                 if (index == p.Id)
                 {
+<<<<<<< HEAD
                     PandC += $"{p.FirstName} {p.LastName ?? ""}";
                         if (p.Id != null) PandC += $"(Id={p.Id})";
                         if(p.BirthYear!=null) PandC += $" Født: {p.BirthYear ?? null}";
@@ -60,6 +65,14 @@ namespace Oblig_1_Modul_3
                 }
             }
             return PandC;
+=======
+                    PersonAndChildren +=
+                        $"{p.FirstName} {p.LastName}(Id={p.Id}) Født: {p.BirthYear} Far: {p.Father.FirstName} (Id={p.Father.Id})\n";
+                    PersonAndChildren += FindChildren(p);
+                }
+            }
+            return PersonAndChildren;
+>>>>>>> 7a484b8a20c97eb7f560896ed9f72e08014909ba
         }
 
         private string FindChildren(Person person)
